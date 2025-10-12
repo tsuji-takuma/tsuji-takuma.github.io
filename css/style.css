@@ -33,6 +33,35 @@ a:hover {
     text-decoration: underline;
 }
 
+.language-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 12px;
+    z-index: 1000;
+}
+
+.lang-btn {
+    background-color: rgba(255, 255, 255, 0.85);
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    padding: 6px 16px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.lang-btn:hover {
+    background-color: #f3f3f3;
+}
+
+.lang-btn.active {
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
+}
+
 /* --- 見出しのスタイル --- */
 h1, h2, h3 {
     font-weight: 600; /* 少し太めのウェイトで見出しを際立たせる */
@@ -129,6 +158,12 @@ hr {
         position: static;
         top: auto;
         text-align: center; /* スマホ表示では中央揃えに */
+    }
+
+    .language-toggle {
+        top: auto;
+        bottom: 20px;
+        right: 20px;
     }
 
     h2 {

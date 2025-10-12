@@ -9,6 +9,11 @@
 </head>
 <body>
 
+    <div class="language-toggle" role="group" aria-label="Language selection">
+        <button type="button" class="lang-btn active" data-lang="ja" aria-pressed="true">日本語</button>
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">English</button>
+    </div>
+
     <div class="wrapper">
         <aside class="left-column">
             <div class="profile">
@@ -17,13 +22,19 @@
                 <img src="images/profile.jpg" alt="プロフィール写真" class="profile-img">
                 
                 <p>
-                    I am a fourth-year undergraduate student<br>
-                    in the Department of Electronics and Information Engineering, Faculty of Engineering, Hokkaido University.<br>
-                    a Member of <a href="https://sites.google.com/elms.hokudai.ac.jp/intelligent-software-lab/home?authuser=0" target="_blank" rel="noopener noreferrer">Intelligent Software Laboratory</a>
+                    <span class="lang lang-en" hidden>
+                        I am a fourth-year undergraduate student<br>
+                        in the Department of Electronics and Information Engineering, Faculty of Engineering, Hokkaido University.<br>
+                        a Member of <a href="https://sites.google.com/elms.hokudai.ac.jp/intelligent-software-lab/home?authuser=0" target="_blank" rel="noopener noreferrer">Intelligent Software Laboratory</a>
+                    </span>
+                    <span class="lang lang-ja">
+                        北海道大学工学部情報エレクトロニクス学科の4年生です。<br>
+                        <a href="https://sites.google.com/elms.hokudai.ac.jp/intelligent-software-lab/home?authuser=0" target="_blank" rel="noopener noreferrer">知能ソフトウェア研究室</a> に所属しています。
+                    </span>
                 </p>
                 <hr>
                 <p class="social-links">
-                    <a href="https://x.com/Tsujima_____" target="_blank"><span class="fab fa-twitter"></span> X (Twitter)</a>
+                    <a href="https://x.com/Tsuji_ma_" target="_blank"><span class="fab fa-twitter"></span> X (Twitter)</a>
                     <a href="https://github.com/tsuji99999" target="_blank"><span class="fab fa-github"></span> GitHub</a>
                 </p>
                 <hr>
@@ -37,56 +48,139 @@
         <main class="right-column">
             
             <section id="about">
-                <h2>About Me</h2>
-                <p><strong>Major:</strong> Information Science & Engineering<br><strong>Hobbies:</strong> Music (listening & playing), Baseball (watching, formerly played)</p>
+                <h2>
+                    <span class="lang lang-en" hidden>About Me</span>
+                    <span class="lang lang-ja">自己紹介</span>
+                </h2>
+                <p>
+                    <span class="lang lang-en" hidden><strong>Major:</strong> Natural Language Processing<br><strong>Hobbies:</strong> Music (listening & playing), Baseball (watching, formerly played)</span>
+                    <span class="lang lang-ja"><strong>専攻:</strong> 自然言語処理<br><strong>趣味:</strong> 音楽（鑑賞・演奏）、野球（観戦・元プレイヤー）</span>
+                </p>
             </section><br>
 
             <section id="education">
-                <h2>Education</h2>
-                <ul>
-                    <li>Hokkaido University, Faculty of Engineering, Department of Electronics and Information Engineering (2022/04 - Present)</li>
+                <h2>
+                    <span class="lang lang-en" hidden>Education</span>
+                    <span class="lang lang-ja">学歴</span>
+                </h2>
+                <ul class="lang lang-en" hidden>
+                    <li>Hokkaido University, Faculty of Engineering, Department of Electronics and Information Engineering (2022/04 - Present)<br>GPA: 3.85/4.30</li>
                     <li>Sapporo Asahigaoka High School (2019/04 - 2022/03)</li>
+                </ul>
+                <ul class="lang lang-ja">
+                    <li>北海道大学 工学部 情報エレクトロニクス学科（2022年4月 - 在学中）<br>GPA: 3.85/4.30</li>
+                    <li>市立札幌旭丘高等学校（2019年4月 - 2022年3月）</li>
                 </ul>
             </section><br>
 
             <section id="research">
-                <h2>Research Interests</h2>
-                <ul>
-                    <li>Causal Relationship Extraction<br></li>
+                <h2>
+                    <span class="lang lang-en" hidden>Research Interests</span>
+                    <span class="lang lang-ja">研究テーマ</span>
+                </h2>
+                <ul class="lang lang-en" hidden>
+                    <li>Causal Relationship Extraction from Documents<br></li>
+                </ul>
+                <ul class="lang lang-ja">
+                    <li>文書からの因果関係抽出<br></li>
                 </ul>
             </section><br>
 
             <section id="conference">
-                <h2>Domestic Conferences / Symposia</h2>
+                <h2>
+                    <span class="lang lang-en" hidden>Domestic Conferences / Symposiums</span>
+                    <span class="lang lang-ja">国内学会・シンポジウム</span>
+                </h2>
                 <ul>
                     <li>辻拓真, 平野正徳, 今城健太郎, 坂地泰紀, 野田五十樹.<em>日本語金融テキストにおける大規模言語モデルの因果関係抽出能力強化に向けた試み</em>. 第20回言語処理若手シンポジウム(YANS2025). 2025/09. (奨励賞 受賞)<a href="https://x.com/yans_official/status/1968972380685914147" target="_blank">[link]</a></li>
                 </ul>
             </section><br>
 
-            <section id="projects">
-                <h2>Projects</h2>
+            <section id="awards">
+                <h2>
+                    <span class="lang lang-en" hidden>Awards</span>
+                    <span class="lang lang-ja">受賞</span>
+                </h2>
+                <ul class="lang lang-en" hidden>
+                    <li>第20回言語処理若手シンポジウム（YANS2025） 奨励賞<br>(24/246 9.76%)</li>
+                </ul>
+                <ul class="lang lang-ja">
+                    <li>第20回言語処理若手シンポジウム（YANS2025） 奨励賞<br>(24/246 9.76%)</li>
+                </ul>
+            </section><br>
+
+            <!-- <section id="projects">
+                <h2>
+                    <span class="lang lang-en" hidden>Projects</span>
+                    <span class="lang lang-ja">プロジェクト</span>
+                </h2>
                 <div class="project-item">
-                    <h3>Coming soon...</h3>
+                    <h3>
+                        <span class="lang lang-en" hidden>Upcoming</span>
+                        <span class="lang lang-ja">近日公開予定</span>
+                    </h3>
                 </div>
-                </section>
+                </section> -->
 
             <section id="skills">
-                <h2>Skills</h2>
-                <ul>
+                <h2>
+                    <span class="lang lang-en" hidden>Skills</span>
+                    <span class="lang lang-ja">スキル</span>
+                </h2>
+                <ul class="lang lang-en" hidden>
                     <li><strong>Languages:</strong> Python, C</li>
                     <li><strong>Frameworks/Libraries:</strong> PyTorch, Transformers</li>
                     <li><strong>Tools:</strong> Git, GitHub, Docker</li>
                 </ul>
+                <ul class="lang lang-ja">
+                    <li><strong>プログラミング言語:</strong> Python, C</li>
+                    <li><strong>フレームワーク / ライブラリ:</strong> PyTorch, Transformers</li>
+                    <li><strong>ツール:</strong> Git, GitHub, Docker</li>
+                </ul>
             </section><br>
 
             <section id="qualifications">
-                <h2>Licenses / Certifications</h2>
-                 <ul>
+                <h2>
+                    <span class="lang lang-en" hidden>Licenses / Certifications</span>
+                    <span class="lang lang-ja">資格・検定</span>
+                </h2>
+                 <ul class="lang lang-en" hidden>
                     <li>TOEIC L&R Test: 825 (2024/11)</li>
+                </ul>
+                 <ul class="lang lang-ja">
+                    <li>TOEIC L&R Test 825点（2024年11月）</li>
                 </ul>
             </section>
         </main>
     </div>
 
+    <script>
+    (function () {
+        const htmlEl = document.documentElement;
+        const buttons = document.querySelectorAll('.lang-btn');
+        const setLang = (lang) => {
+            htmlEl.setAttribute('lang', lang);
+            document.querySelectorAll('.lang-en').forEach((el) => {
+                el.hidden = lang !== 'en';
+            });
+            document.querySelectorAll('.lang-ja').forEach((el) => {
+                el.hidden = lang !== 'ja';
+            });
+            buttons.forEach((button) => {
+                const isActive = button.dataset.lang === lang;
+                button.classList.toggle('active', isActive);
+                button.setAttribute('aria-pressed', String(isActive));
+            });
+        };
+
+        buttons.forEach((button) => {
+            button.addEventListener('click', () => {
+                setLang(button.dataset.lang);
+            });
+        });
+
+        setLang('ja');
+    })();
+</script>
 </body>
 </html>

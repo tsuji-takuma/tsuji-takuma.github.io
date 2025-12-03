@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Log - Takuma TSUJI</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="language-toggle" role="group" aria-label="Language selection">
+        <button type="button" class="lang-btn active" data-lang="ja" aria-pressed="true">日本語</button>
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">English</button>
+    </div>
+
+    <div class="wrapper">
+        <aside class="left-column">
+            <div class="profile">
+                <h1>辻 拓真</h1>
+                <p>Takuma TSUJI</p>
+                <img src="images/profile.jpg" alt="プロフィール写真" class="profile-img">
+
+                <p>
+                    <span class="lang lang-en" hidden>
+                        <a href="./index.html"><i class="fas fa-arrow-left"></i> Back to Home</a>
+                    </span>
+                    <span class="lang lang-ja">
+                        <a href="./index.html"><i class="fas fa-arrow-left"></i> ホームに戻る</a>
+                    </span>
+                </p>
+                <hr>
+                <p class="social-links">
+                    <a href="https://x.com/Tsuji_ma_" target="_blank"><span class="fab fa-twitter"></span> X
+                        (Twitter)</a>
+                    <a href="https://github.com/tsuji-takuma" target="_blank"><span class="fab fa-github"></span>
+                        GitHub</a>
+                </p>
+            </div>
+        </aside>
+
+        <main class="right-column">
+
+            <section id="reading-log">
+                <h2>
+                    <span class="lang lang-en" hidden>Reading Log / Study Notes</span>
+                    <span class="lang lang-ja">読書ログ・独学メモ</span>
+                </h2>
+                <p>
+                    <span class="lang lang-en" hidden>
+                        Here I summarize the books I have read and the knowledge I have gained through self-study.<br>
+                        (Content to be added)
+                    </span>
+                    <span class="lang lang-ja">
+                        読んだ専門書や独学で得た知識のメモをここにまとめていきます。<br>
+                        （コンテンツは順次追加予定）
+                    </span>
+                </p>
+
+                <!-- Example Entry -->
+                <!-- 
+                <div class="book-entry">
+                    <h3>Book Title</h3>
+                    <p>Notes...</p>
+                </div>
+                -->
+
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        (function () {
+            const htmlEl = document.documentElement;
+            const buttons = document.querySelectorAll('.lang-btn');
+            const setLang = (lang) => {
+                htmlEl.setAttribute('lang', lang);
+                document.querySelectorAll('.lang-en').forEach((el) => {
+                    el.hidden = lang !== 'en';
+                });
+                document.querySelectorAll('.lang-ja').forEach((el) => {
+                    el.hidden = lang !== 'ja';
+                });
+                buttons.forEach((button) => {
+                    const isActive = button.dataset.lang === lang;
+                    button.classList.toggle('active', isActive);
+                    button.setAttribute('aria-pressed', String(isActive));
+                });
+            };
+
+            buttons.forEach((button) => {
+                button.addEventListener('click', () => {
+                    setLang(button.dataset.lang);
+                });
+            });
+
+            setLang('ja');
+        })();
+    </script>
+</body>
+
+</html>

@@ -49,8 +49,6 @@
     toeic: "TOEIC L&R Test: 825 (November 2024)",
     hobbies: "Listening to music, playing the guitar, watching baseball, and making soup curry",
     backToTop: "Back to top",
-    dads: "Digital Agency Design System",
-    credit: " — independently adapted for this personal website.",
   };
 
   const translations = [];

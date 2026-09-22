@@ -1,0 +1,85 @@
+{
+  "retrieved_on": "2026-09-22",
+  "source_repository": "https://github.com/google/fonts",
+  "source_commit": "e44c4b011a820c2cbe2fd2cfa8052037d7edb571",
+  "conversion": {
+    "operation": "TTF to WOFF2 packaging only; no subsetting, instancing or outline edits",
+    "fonttools": "4.60.2",
+    "brotli": "1.2.0"
+  },
+  "fonts": [
+    {
+      "family": "IBM Plex Sans JP",
+      "weight": "700",
+      "font_style": "normal",
+      "file": "ibmplexsansjp/IBMPlexSansJP-Bold.woff2",
+      "format": "woff2",
+      "source_url": "https://raw.githubusercontent.com/google/fonts/e44c4b011a820c2cbe2fd2cfa8052037d7edb571/ofl/ibmplexsansjp/IBMPlexSansJP-Bold.ttf",
+      "source_file": "IBMPlexSansJP-Bold.ttf",
+      "source_bytes": 2391376,
+      "source_sha256": "bd8a98b9b55c9ea3f0fa1ed094c15981788cc9a41b0357f4453014fd1d44da19",
+      "bytes": 1128836,
+      "sha256": "87e57bb0504c89ebf8e83e4b7b915d534932bda9a05a6f0abbec143cdee7ab01",
+      "glyphs": 9505,
+      "unicode_codepoints": 8316,
+      "outlines_sha256": "74b2c450ae791d49a883f6bba3de4c5da5a318e7d595c3c5bd441a1b463eaf25",
+      "variation_axes": [],
+      "verification": "glyph order, Unicode cmap, outline commands and horizontal metrics match source; variable gvar table also matches where applicable"
+    },
+    {
+      "family": "IBM Plex Sans JP",
+      "weight": "400",
+      "font_style": "normal",
+      "file": "ibmplexsansjp/IBMPlexSansJP-Regular.woff2",
+      "format": "woff2",
+      "source_url": "https://raw.githubusercontent.com/google/fonts/e44c4b011a820c2cbe2fd2cfa8052037d7edb571/ofl/ibmplexsansjp/IBMPlexSansJP-Regular.ttf",
+      "source_file": "IBMPlexSansJP-Regular.ttf",
+      "source_bytes": 2396484,
+      "source_sha256": "372f8bba95f386856ae435dc0e69f08db1cac29bed513d99171a0ae2d307ba2a",
+      "bytes": 1096756,
+      "sha256": "6a64aa306ced2be6f1b28c899c653f8af4a1e2271697d25746f25bbe22c4de7f",
+      "glyphs": 9505,
+      "unicode_codepoints": 8316,
+      "outlines_sha256": "c99212cd656315083abac7d9c8e3de8220ba580b5544774f7ab160ee9f3eea86",
+      "variation_axes": [],
+      "verification": "glyph order, Unicode cmap, outline commands and horizontal metrics match source; variable gvar table also matches where applicable"
+    }
+  ],
+  "licenses": [
+    {
+      "family": "Noto Sans JP",
+      "file": "notosansjp/OFL.txt",
+      "license": "SIL Open Font License 1.1",
+      "source_url": "https://raw.githubusercontent.com/google/fonts/e44c4b011a820c2cbe2fd2cfa8052037d7edb571/ofl/notosansjp/OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9"
+    },
+    {
+      "family": "BIZ UDPGothic",
+      "file": "bizudpgothic/OFL.txt",
+      "license": "SIL Open Font License 1.1",
+      "source_url": "https://raw.githubusercontent.com/google/fonts/e44c4b011a820c2cbe2fd2cfa8052037d7edb571/ofl/bizudpgothic/OFL.txt",
+      "sha256": "e753d7155d53c747d037a445e584c8ecfca6dd79846db610417e282a736b28bc"
+    },
+    {
+      "family": "Zen Kaku Gothic New",
+      "file": "zenkakugothicnew/OFL.txt",
+      "license": "SIL Open Font License 1.1",
+      "source_url": "https://raw.githubusercontent.com/google/fonts/e44c4b011a820c2cbe2fd2cfa8052037d7edb571/ofl/zenkakugothicnew/OFL.txt",
+      "sha256": "0fac78a235c98d640cb06332eb5362c211d86fa03c011df438c35005d22ad2c7"
+    },
+    {
+      "family": "M PLUS 1p",
+      "file": "mplus1p/OFL.txt",
+      "license": "SIL Open Font License 1.1",
+      "source_url": "https://raw.githubusercontent.com/google/fonts/e44c4b011a820c2cbe2fd2cfa8052037d7edb571/ofl/mplus1p/OFL.txt",
+      "sha256": "da15da6b1496d4de18f97e2ad1b722ef8a1c121149c2c93b2cf7eac6ac27b35c"
+    },
+    {
+      "family": "IBM Plex Sans JP",
+      "file": "ibmplexsansjp/OFL.txt",
+      "license": "SIL Open Font License 1.1",
+      "source_url": "https://raw.githubusercontent.com/google/fonts/e44c4b011a820c2cbe2fd2cfa8052037d7edb571/ofl/ibmplexsansjp/OFL.txt",
+      "sha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da"
+    }
+  ]
+}

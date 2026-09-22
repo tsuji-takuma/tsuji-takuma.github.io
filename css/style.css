@@ -1,181 +1,230 @@
-/* --- 変数定義 (色の管理) --- */
+/* Forest palette and typography selected in the design preview.
+   Design references and font credits: ../README.md */
 :root {
-    --text-color: #333333; /* 真っ黒ではなく、少し柔らかい黒に */
-    --link-color: #0056b3; /* 標準的なリンクの色 */
-    --border-color: #eeeeee; /* 薄い境界線用の色 */
-    --bg-color: #ffffff;
-}
-/* --- 斜体（emタグ）のスタイル強制 --- */
-em {
-    font-style: italic !important;
+  --color-text: #24272b;
+  --color-secondary: #5c626b;
+  --color-link: #285a73;
+  --color-link-visited: #704669;
+  --color-border: #80858c;
+  --color-background: #fafcfa;
+  --color-surface: #edf3ef;
+  --color-primary: #28594a;
+  --font-ui: system-ui, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  --font-body: "IBM Plex Sans JP", var(--font-ui);
+  --font-heading: var(--font-body);
+  --personal-label-width: 5rem;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-6: 3rem;
+  --space-8: 4rem;
+  --page-width: 56rem;
+  --reveal-distance: 16px;
+  --reveal-duration: 400ms;
 }
 
-/* --- 基本設定とフォントの指定 --- */
+:root:lang(en) { --personal-label-width: 8.5rem; }
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-padding-top: var(--space-4); }
 body {
-    /* モダンな印象を与えるサンセリフ体のフォントを指定 */
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
-    color: var(--text-color);
-    background-color: var(--bg-color);
-    font-size: 16px;
-    line-height: 1.8; /* 行間を広げて読みやすくする */
-    margin: 0;
-    -webkit-font-smoothing: antialiased; /* 文字を滑らかに表示 (Mac向け) */
-    -moz-osx-font-smoothing: grayscale; /* (Mac向け) */
+  margin: 0;
+  color: var(--color-text);
+  background: var(--color-background);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.75;
 }
-
+p, h1, h2, h3, h4, dl, dd, ol, ul { margin: 0; }
+h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; }
+h1, h2 { color: var(--color-primary); }
+h1 { font-size: 2.8125rem; line-height: 1.4; }
+h2 { font-size: 1.75rem; line-height: 1.5; }
+h3 { font-size: 1.125rem; line-height: 1.6; }
+h4 { font-size: 1.25rem; line-height: 1.5; }
 a {
-    color: var(--link-color);
-    text-decoration: none;
-    transition: color 0.2s ease-in-out; /* ホバー時の色の変化を滑らかに */
+  color: var(--color-link);
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 1px;
 }
-a:hover {
-    color: #007bff;
-    text-decoration: underline;
+a:visited { color: var(--color-link-visited); }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible, button:focus-visible {
+  color: #111;
+  background: #ffdf5c;
+  outline: 3px solid #111;
+  outline-offset: 3px;
+}
+button { font: inherit; font-family: var(--font-ui); color: var(--color-text); }
+button { cursor: pointer; }
+button { min-height: 2.75rem; }
+.site-tools {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-2);
+  padding-top: var(--space-3);
+  font-family: var(--font-ui);
+}
+.language-switch { display: flex; align-items: center; gap: 4px; flex-shrink: 0; }
+.language-switch > span { color: var(--color-secondary); }
+.language-switch button { min-width: 2.75rem; padding: 0 8px; border: 0; background: transparent; }
+.language-switch button[aria-pressed="true"] {
+  color: var(--color-primary);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.45em;
+  text-decoration-thickness: 2px;
+}
+.language-switch button:hover { background: var(--color-surface); }
+.language-switch button:focus-visible { color: #111; background: #ffdf5c; }
+img { display: block; max-width: 100%; }
+.page {
+  width: min(var(--page-width), calc(100% - 6rem));
+  margin-inline: auto;
+}
+.profile {
+  display: grid;
+  grid-template-columns: 10rem minmax(0, 1fr);
+  column-gap: var(--space-6);
+  row-gap: var(--space-2);
+  padding-block: var(--space-4);
+}
+.profile-photo {
+  width: 10rem;
+  height: 10rem;
+  grid-row: span 2;
+  border-radius: 4px;
+}
+.identity { align-self: center; }
+.roman-name { margin-top: var(--space-1); font-size: 1.25rem; line-height: 1.5; }
+.profile-body { grid-column: 1 / -1; margin-top: var(--space-1); }
+.affiliation { grid-column: 2; }
+.affiliation > a { display: block; width: fit-content; }
+.degree { display: inline-block; }
+.degree:lang(en) { display: block; }
+.research-intro { max-width: 48rem; }
+.contact { display: flex; flex-wrap: wrap; align-items: center; gap: 0 var(--space-4); margin-top: var(--space-2); }
+.email { display: flex; flex-wrap: wrap; gap: 0 var(--space-2); }
+.email > span:last-child { overflow-wrap: anywhere; }
+.contact-label { color: var(--color-secondary); }
+.social-links { display: flex; gap: var(--space-3); list-style: none; padding: 0; }
+.social-links a { display: inline-flex; min-width: 1.5rem; min-height: 2.75rem; align-items: center; }
+.page-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-4);
+  padding-block: var(--space-1);
+  border-block: 1px solid var(--color-border);
+}
+.page-nav a { display: inline-flex; align-items: center; min-height: 2.75rem; }
+.page-nav a:visited { color: var(--color-link); }
+.section { padding-top: var(--space-6); }
+.section + .section { margin-top: var(--space-6); border-top: 1px solid var(--color-border); }
+.publication-group { margin-top: var(--space-4); }
+.publication-group + .publication-group { margin-top: var(--space-6); }
+.publication-group > h3 { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: baseline; }
+.heading-note { font-size: 1rem; color: var(--color-secondary); font-weight: 400; }
+.publication-list { padding: 0; list-style: none; }
+.publication-list > li {
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr);
+  gap: var(--space-4);
+  padding-block: var(--space-3) var(--space-4);
+}
+.publication-list > li + li { border-top: 1px solid var(--color-border); }
+.paper-date { color: var(--color-secondary); font-variant-numeric: tabular-nums; line-height: 1.875; }
+.paper h4 { overflow-wrap: anywhere; }
+.authors { margin-top: var(--space-1); color: var(--color-secondary); }
+.authors strong { color: var(--color-text); }
+.venue { margin-top: var(--space-2); }
+.venue-name { font-weight: 700; }
+.conference-name, .paper-note { color: var(--color-secondary); }
+.paper-note { margin-top: var(--space-1); }
+.original-title, .translation-note { margin-top: var(--space-1); color: var(--color-secondary); }
+.award { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-2); }
+.award a { min-height: 1.75rem; }
+.background-group { margin-top: var(--space-4); }
+.background-group + .background-group { margin-top: var(--space-6); }
+.history { margin-top: var(--space-3); }
+.history > div {
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+  gap: var(--space-4);
+}
+.history > div + div { margin-top: var(--space-3); }
+.history dt, .secondary { color: var(--color-secondary); }
+.history dt { font-variant-numeric: tabular-nums; }
+.history dd > p { margin-top: 4px; }
+.history dd > .work-description { margin-top: var(--space-1); }
+.personal dl { margin-top: var(--space-3); }
+.personal dl > div { display: grid; grid-template-columns: var(--personal-label-width) minmax(0, 1fr); gap: var(--space-4); }
+.personal dl > div + div { margin-top: var(--space-2); }
+.personal dt { color: var(--color-secondary); }
+.site-footer {
+  margin-top: var(--space-8);
+  border-top: 1px solid var(--color-border);
+  padding-block: var(--space-3) var(--space-4);
+  font-size: 0.875rem;
+  color: var(--color-secondary);
+}
+.footer-links { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-3); align-items: center; }
+.footer-links a { display: inline-flex; min-height: 2rem; align-items: center; }
+.site-footer > p { margin-top: var(--space-1); }
+.skip-link { position: absolute; top: -8rem; left: var(--space-2); padding: var(--space-2); z-index: 1; }
+.skip-link:focus { top: var(--space-2); }
+
+/* Content is visible by default. Only JS-prepared, off-screen groups wait.
+   A completed entrance returns to ordinary layout without a transform. */
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(var(--reveal-distance)); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-pending { opacity: 0; }
+  .reveal-enter {
+    animation: reveal-up var(--reveal-duration) cubic-bezier(0, 0, 0.38, 0.9) both;
+  }
+}
+.reveal-pending:focus-within { opacity: 1 !important; }
+
+@media (max-width: 47.99rem) {
+  :root { --reveal-distance: 8px; }
+  .page { width: calc(100% - 2.5rem); }
+  .site-tools { gap: var(--space-1); padding-top: var(--space-2); }
+  .profile {
+    grid-template-columns: 5.5rem minmax(0, 1fr);
+    column-gap: var(--space-3);
+    row-gap: var(--space-3);
+    padding-block: var(--space-4);
+  }
+  .profile-photo { grid-row: auto; width: 5.5rem; height: 5.5rem; }
+  h1 { font-size: 2rem; line-height: 1.5; }
+  h1, h2, h3 { overflow-wrap: anywhere; }
+  .roman-name { font-size: 1rem; margin-top: 0; }
+  .profile-body { grid-column: 1 / -1; margin-top: 0; }
+  .affiliation { grid-column: 1 / -1; margin-top: 0; }
+  .contact { margin-top: var(--space-2); }
+  .page-nav { gap: var(--space-1) var(--space-3); }
+  h2 { font-size: 1.5rem; }
+  .section { padding-top: var(--space-4); }
+  .section + .section { margin-top: var(--space-4); }
+  .publication-group { margin-top: var(--space-3); }
+  .publication-group + .publication-group { margin-top: var(--space-4); }
+  .publication-list > li { grid-template-columns: 1fr; gap: var(--space-1); padding-block: var(--space-3); }
+  .history > div { grid-template-columns: 1fr; gap: var(--space-1); }
+  .personal dl > div { grid-template-columns: 1fr; gap: 4px; }
+  .background-group + .background-group { margin-top: var(--space-4); }
+  .site-footer { margin-top: var(--space-6); }
 }
 
-.language-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    gap: 12px;
-    z-index: 1000;
-}
-
-.lang-btn {
-    background-color: rgba(255, 255, 255, 0.85);
-    border: 1px solid var(--border-color);
-    border-radius: 999px;
-    padding: 6px 16px;
-    font-size: 0.9em;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-}
-
-.lang-btn:hover {
-    background-color: #f3f3f3;
-}
-
-.lang-btn.active {
-    background-color: #000;
-    color: #fff;
-    border-color: #000;
-}
-
-/* --- 見出しのスタイル --- */
-h1, h2, h3 {
-    font-weight: 600; /* 少し太めのウェイトで見出しを際立たせる */
-    line-height: 1.3;
-    color: #000;
-}
-
-h2 {
-    font-size: 1.8em;
-    border-bottom: 2px solid var(--border-color);
-    padding-bottom: 0.5em;
-    margin-top: 2.5em; /* セクション間の余白をしっかり確保 */
-    margin-bottom: 1.2em;
-}
-h2:first-child {
-    margin-top: 0;
-}
-
-h3 {
-    font-size: 1.3em;
-}
-
-.roman-name {
-    display: block;
-    margin-top: 0.25em;
-    font-size: 0.58em;
-    font-weight: 500;
-    letter-spacing: 0.04em;
-    color: #555;
-}
-
-
-/* --- レイアウト --- */
-.wrapper {
-    display: grid;
-    /* 左カラムの幅を300px, 間の隙間を60pxに広げる */
-    grid-template-columns: 300px 1fr;
-    gap: 60px;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 60px 40px; /* 全体の余白を広げる */
-}
-
-.left-column {
-    position: sticky;
-    top: 60px;
-    align-self: start;
-}
-
-/* --- 左カラムのスタイル --- */
-.profile-img {
-    width: 200px; /* 少し小さくしてスッキリ見せる */
-    height: 200px;
-    border-radius: 50%; /* 丸形にトリミング */
-    object-fit: cover; /* 画像の比率を保ったままトリミング */
-    margin: 1.5em 0;
-}
-
-.left-column p {
-    font-size: 0.9em;
-    line-height: 1.7;
-    color: #555;
-}
-
-.social-links a, .contact {
-    display: block; /* リンクをブロック要素にして扱いやすく */
-    margin-bottom: 0.8em;
-}
-.social-links .fab, .contact .fa {
-    margin-right: 0.8em;
-    width: 20px; /* アイコンの幅を揃える */
-}
-
-hr {
-    border: none;
-    border-top: 1px solid var(--border-color);
-    margin: 1.5em 0;
-}
-
-/* --- 右カラムのスタイル --- */
-.right-column ul {
-    padding-left: 1.2em;
-}
-.right-column li {
-    margin-bottom: 0.8em; /* リスト項目の間隔を調整 */
-}
-
-.project-item {
-    margin-bottom: 2.5em;
-}
-
-
-/* --- レスポンシブ対応 (画面幅が900px以下の場合) --- */
-@media (max-width: 900px) {
-    .wrapper {
-        /* 1カラムレイアウトに変更 */
-        grid-template-columns: 1fr;
-        padding: 30px 20px;
-        gap: 30px;
-    }
-
-    .left-column {
-        position: static;
-        top: auto;
-        text-align: center; /* スマホ表示では中央揃えに */
-    }
-
-    .language-toggle {
-        top: auto;
-        bottom: 20px;
-        right: 20px;
-    }
-
-    h2 {
-        font-size: 1.6em;
-    }
+@media print {
+  .reveal-pending, .reveal-enter { opacity: 1 !important; transform: none !important; animation: none !important; }
+  .page { width: 100%; }
+  .page-nav, .site-footer, .skip-link, .site-tools { display: none; }
+  .profile { padding-top: 0; }
+  .publication-list > li, .history > div { break-inside: avoid; }
 }

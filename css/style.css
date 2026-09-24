@@ -21,7 +21,7 @@
   --space-8: 4rem;
   --page-width: 56rem;
   --reveal-distance: 16px;
-  --reveal-duration: 400ms;
+  --reveal-duration: 800ms;
 }
 
 :root:lang(en) { --personal-label-width: 8.5rem; }

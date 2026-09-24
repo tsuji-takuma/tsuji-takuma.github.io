@@ -20,4 +20,6 @@ python3 -m http.server 8765 --bind 127.0.0.1
 
 Open `http://127.0.0.1:8765/`. Without JavaScript the Japanese page remains fully readable. Domestic publication titles in the English view are reference translations; the original Japanese titles remain alongside them.
 
+When editing `js/app.js`, update its `?v=` value in `index.html` to the first 12 characters of the file's SHA-256. This prevents a cached translation script from being reused with newly added HTML translation keys.
+
 The layout and accessibility foundations reference the [Digital Agency Design System](https://design.digital.go.jp/dads/). The Forest palette and page composition are independent adaptations. The entrance easing references [IBM Carbon motion guidance](https://carbondesignsystem.com/elements/motion/overview/); the 800ms duration is a site-specific choice.

@@ -30,6 +30,7 @@
     coauthors: ", Masanori Hirano, Kentaro Imajo, Hiroki Sakaji, Itsuki Noda.",
     jsaiVenue: "40th annual meeting of the Japanese Society for Artificial Intelligence",
     nlpVenue: "32nd annual meeting of the Association for Natural Language Processing",
+    nlpPoster: "Poster (PDF)",
     yansVenue: "20th symposium for young researchers in natural language processing",
     award: "Encouragement Award",
     awardLink: "YANS2025 award announcement",
